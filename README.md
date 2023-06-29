@@ -1,5 +1,5 @@
 # HAXBALL-BOT-ATHBOT-
-Javascript Haxball bot. [ 1v1 2v2 3v3 and 4v4 ]
+Haxball bot script. [ 1v1 2v2 3v3 and 4v4 ]
 
 ATHEROS HAXBALL BOT
 1. Chat color based on team colors 🔵 | 🔴
@@ -18,4 +18,10 @@ ATHEROS HAXBALL BOT
 4. ELO system: Initial ELO = [1000 + (Wins*5) + (Losses*-15) + (Goals*15) + (Assists*15) + (CS*10)]
 5. Multiple choosable soccer jerseys from LPF Haxball teams with !camisetahelp.
 6. TOP 10 in-room players by ELO !leaderboard
-7. And many more comands...!
+7. And many more commands....
+
+Setup:
+1. Go to https://www.haxball.com/headless
+2. Inspect -> Console -> top (www.haxball.com)
+3. Copy the script there and enter
+4. Human verification, and get the room link ( Don't close the window )
