@@ -1,14 +1,14 @@
 // Stats: "Auth" : '["0-Games", "1-Wins", "2-Draws", "3-Losses", "4-Winrate", "5-Goals", "6-Assists", "7-GK", "8-CS", "9-CS%", "10- ELO", "11-Role", "12-Nick"]'
 
 /* VARIABLES */
-  
+
 /* ROOM */
 
-var Bot = "ATH BOT: " // Bot's name
+const Bot = "ATH BOT: "; // Bot's name
 
 // GLOBAL VARIABLES //
 const roomName = "💎FUTSAL X4 | ATHBOT 💎";
-const botName = "ATH BOT";
+const botName = "Uteclaxsa BOT";
 const maxPlayers = 50;
 const roomPublic = false;
 
@@ -16,7 +16,7 @@ const roomPublic = false;
 const geo = [{"code": "PE", "lat": -12.1, "lon": -76.9}];
 
 // Admin password //
-var adminPassword = 1111111111111;
+var adminPassword = 130422102703;
 
 const room = HBInit({ roomName: roomName, maxPlayers: maxPlayers, public: roomPublic, playerName: botName, geo: geo[0] });
 
@@ -33,10 +33,10 @@ room.setTeamsLock(true);
 /* STADIUM */
 
 const playerRadius = 15;
-var ballRadius = 6.25;
+const ballRadius = 6.25;
 const triggerDistance = playerRadius + ballRadius + 0.01;
-var aloneMap = '{"name":"Futsal No Goals from HaxMaps","width":420,"height":200,"spawnDistance":180,"bg":{"type":"hockey","width":368,"height":171,"kickOffRadius":65,"cornerRadius":0},"vertexes":[{"x":-368,"y":171,"trait":"ballArea","cMask":["ball"],"bCoef":1},{"x":-368,"y":65,"trait":"ballArea","cMask":["ball"],"bCoef":1,"_selected":"segment"},{"x":-368,"y":-65,"trait":"ballArea","cMask":["ball"],"bCoef":1,"_selected":"segment"},{"x":-368,"y":-171,"trait":"ballArea","bCoef":1,"cMask":["ball"]},{"x":368,"y":171,"trait":"ballArea","cMask":["ball"],"bCoef":1},{"x":368,"y":65,"trait":"ballArea","cMask":["ball"],"bCoef":1},{"x":368,"y":-65,"trait":"ballArea","cMask":["ball"],"bCoef":1},{"x":368,"y":-171,"trait":"ballArea","cMask":["ball"],"bCoef":1},{"x":0,"y":65,"trait":"kickOffBarrier"},{"x":0,"y":-65,"trait":"line"},{"bCoef":1,"trait":"ballArea","x":368,"y":171},{"bCoef":1,"trait":"ballArea","x":368,"y":-171},{"bCoef":0,"trait":"line","x":0,"y":171},{"bCoef":0,"trait":"line","x":0,"y":-171},{"x":0,"y":65,"trait":"kickOffBarrier"},{"x":0,"y":-65,"trait":"kickOffBarrier"},{"x":377,"y":-65,"trait":"line","cMask":["ball"],"bCoef":1},{"x":377,"y":-171,"trait":"ballArea","cMask":["ball"],"bCoef":1},{"x":-377,"y":-65,"trait":"line","cMask":["ball"],"bCoef":1},{"x":-377,"y":-171,"trait":"ballArea","cMask":["ball"],"bCoef":1},{"x":-377,"y":65,"trait":"line","cMask":["ball"],"bCoef":1},{"x":-377,"y":171,"trait":"ballArea","cMask":["ball"],"bCoef":1},{"x":377,"y":65,"trait":"line","cMask":["ball"],"bCoef":1},{"x":377,"y":171,"trait":"ballArea","cMask":["ball"],"bCoef":1},{"x":0,"y":199,"trait":"kickOffBarrier"},{"x":0,"y":65,"trait":"kickOffBarrier"},{"x":0,"y":-65,"trait":"kickOffBarrier"},{"x":0,"y":-199,"trait":"kickOffBarrier"},{"x":-368.53340356886,"y":-62.053454903872,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[-700,-80]},{"x":-400.05760771891,"y":-62.053454903872,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[-700,-80]},{"x":-400.05760771891,"y":64.043361696331,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[-700,80]},{"x":-368.53340356886,"y":64.043361696331,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[-700,80]},{"x":368.09926357786,"y":63.94882446641,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[-700,-80]},{"x":400,"y":64,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[-700,-80]},{"x":400,"y":-61.927767991658,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[-700,80]},{"x":368.9681846993,"y":-62.144998272018,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[-700,80]},{"x":-368,"y":-142.37229643041,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":-90},{"x":-260.90035258157,"y":-50.168480548544,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":0},{"x":-368,"y":-160.81305960678,"bCoef":0.1,"trait":"line","curve":-90},{"x":-358.5379338963,"y":-171,"bCoef":0.1,"trait":"line","curve":-90},{"x":-368,"y":141.33175243687,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":90},{"x":-260.90035258157,"y":49.127936555002,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":0},{"x":-368,"y":159.77251561324,"bCoef":0.1,"trait":"line","curve":90},{"x":-358.5379338963,"y":171,"bCoef":0.1,"trait":"line","curve":90},{"x":368,"y":159.77251561324,"bCoef":0.1,"trait":"line","curve":-90},{"x":358.36266315432,"y":171,"bCoef":0.1,"trait":"line","curve":-90},{"x":368,"y":-160.81305960678,"bCoef":0.1,"trait":"line","curve":90},{"x":358.36266315432,"y":-171,"bCoef":0.1,"trait":"line","curve":90},{"x":368,"y":-142.37229643041,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":90},{"x":260.72508183959,"y":-50.168480548544,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":90},{"x":368,"y":141.33175243687,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":-90},{"x":260.72508183959,"y":49.127936555002,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":-90},{"x":260.72508183959,"y":-50.168480548544,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":0},{"x":260.72508183959,"y":49.127936555002,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":0},{"x":-250.86909422732,"y":-1.2295321189394,"bCoef":0.1,"trait":"line","curve":180},{"x":-250.86909422732,"y":0.18898812539692,"bCoef":0.1,"trait":"line","curve":180},{"x":-250.86909422732,"y":-2.6480523632758,"bCoef":0.1,"trait":"line","curve":180},{"x":-250.86909422732,"y":1.6075083697333,"bCoef":0.1,"trait":"line","curve":180},{"x":-250.86909422732,"y":0.89824824756514,"bCoef":0.1,"trait":"line","curve":180},{"x":-250.86909422732,"y":-1.9387922411076,"bCoef":0.1,"trait":"line","curve":180},{"x":-250.86909422732,"y":1.9621384308174,"bCoef":0.1,"trait":"line","curve":180},{"x":-250.86909422732,"y":-3.0026824243599,"bCoef":0.1,"trait":"line","curve":180},{"x":250.69382348534,"y":-1.2295321189394,"bCoef":0.1,"trait":"line","curve":180},{"x":250.69382348534,"y":0.18898812539692,"bCoef":0.1,"trait":"line","curve":180},{"x":250.69382348534,"y":-2.6480523632758,"bCoef":0.1,"trait":"line","curve":180},{"x":250.69382348534,"y":1.6075083697333,"bCoef":0.1,"trait":"line","curve":180},{"x":250.69382348534,"y":0.89824824756514,"bCoef":0.1,"trait":"line","curve":180},{"x":250.69382348534,"y":-1.9387922411076,"bCoef":0.1,"trait":"line","curve":180},{"x":250.69382348534,"y":1.9621384308174,"bCoef":0.1,"trait":"line","curve":180},{"x":250.69382348534,"y":-3.0026824243599,"bCoef":0.1,"trait":"line","curve":180},{"x":-185.66591492467,"y":-1.2295321189394,"bCoef":0.1,"trait":"line","curve":180},{"x":-185.66591492467,"y":0.18898812539692,"bCoef":0.1,"trait":"line","curve":180},{"x":-185.66591492467,"y":-2.6480523632758,"bCoef":0.1,"trait":"line","curve":180},{"x":-185.66591492467,"y":1.6075083697333,"bCoef":0.1,"trait":"line","curve":180},{"x":-185.66591492467,"y":0.89824824756514,"bCoef":0.1,"trait":"line","curve":180},{"x":-185.66591492467,"y":-1.9387922411076,"bCoef":0.1,"trait":"line","curve":180},{"x":-185.66591492467,"y":1.9621384308174,"bCoef":0.1,"trait":"line","curve":180},{"x":-185.66591492467,"y":-3.0026824243599,"bCoef":0.1,"trait":"line","curve":180},{"x":185.49064418269,"y":-1.2295321189394,"bCoef":0.1,"trait":"line","curve":180},{"x":185.49064418269,"y":0.18898812539692,"bCoef":0.1,"trait":"line","curve":180},{"x":185.49064418269,"y":-2.6480523632758,"bCoef":0.1,"trait":"line","curve":180},{"x":185.49064418269,"y":1.6075083697333,"bCoef":0.1,"trait":"line","curve":180},{"x":185.49064418269,"y":0.89824824756514,"bCoef":0.1,"trait":"line","curve":180},{"x":185.49064418269,"y":-1.9387922411076,"bCoef":0.1,"trait":"line","curve":180},{"x":185.49064418269,"y":1.9621384308174,"bCoef":0.1,"trait":"line","curve":180},{"x":185.49064418269,"y":-3.0026824243599,"bCoef":0.1,"trait":"line","curve":180},{"x":-160.58776903904,"y":-159.39453936245,"bCoef":0.1,"trait":"line"},{"x":-160.58776903904,"y":-182.09086327183,"bCoef":0.1,"trait":"line"},{"x":-80.337702205015,"y":-159.39453936245,"bCoef":0.1,"trait":"line"},{"x":-80.337702205015,"y":-182.09086327183,"bCoef":0.1,"trait":"line"},{"x":160.41249829706,"y":-159.39453936245,"bCoef":0.1,"trait":"line"},{"x":160.41249829706,"y":-182.09086327183,"bCoef":0.1,"trait":"line"},{"x":80.162431463036,"y":-159.39453936245,"bCoef":0.1,"trait":"line"},{"x":80.162431463036,"y":-182.09086327183,"bCoef":0.1,"trait":"line"},{"x":-254.88159756902,"y":-171,"bCoef":0.1,"trait":"line"},{"x":-254.88159756902,"y":-182.09086327183,"bCoef":0.1,"trait":"line"},{"x":-371.91294503531,"y":-87.759267023458,"bCoef":0.1,"trait":"line"},{"x":-384.61920561736,"y":-87.759267023458,"bCoef":0.1,"trait":"line"},{"x":371.73767429333,"y":-87.759267023458,"bCoef":0.1,"trait":"line"},{"x":384.44393487538,"y":-87.759267023458,"bCoef":0.1,"trait":"line"},{"x":-371.91294503531,"y":86.718723029916,"bCoef":0.1,"trait":"line"},{"x":-384.61920561736,"y":86.718723029916,"bCoef":0.1,"trait":"line"},{"x":371.73767429333,"y":86.718723029916,"bCoef":0.1,"trait":"line"},{"x":384.44393487538,"y":86.718723029916,"bCoef":0.1,"trait":"line"},{"x":-254.88159756902,"y":171,"bCoef":0.1,"trait":"line"},{"x":-254.88159756902,"y":181.05031927829,"bCoef":0.1,"trait":"line"},{"x":254.70632682704,"y":-171,"bCoef":0.1,"trait":"line"},{"x":254.70632682704,"y":-182.09086327183,"bCoef":0.1,"trait":"line"},{"x":254.70632682704,"y":171,"bCoef":0.1,"trait":"line"},{"x":254.70632682704,"y":181.05031927829,"bCoef":0.1,"trait":"line"}],"segments":[{"v0":0,"v1":1,"trait":"ballArea"},{"v0":2,"v1":3,"trait":"ballArea"},{"v0":4,"v1":5,"trait":"ballArea"},{"v0":6,"v1":7,"trait":"ballArea"},{"v0":8,"v1":9,"trait":"kickOffBarrier","curve":180,"cGroup":["blueKO"]},{"v0":8,"v1":9,"trait":"kickOffBarrier","curve":-180,"cGroup":["redKO"]},{"vis":true,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":1,"v1":0,"cMask":["ball"],"x":-368},{"vis":true,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":5,"v1":4,"cMask":["ball"],"x":368},{"vis":true,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":2,"v1":3,"cMask":["ball"],"x":-368},{"vis":true,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":6,"v1":7,"cMask":["ball"],"x":368},{"vis":true,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":0,"v1":10,"y":171},{"vis":true,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":3,"v1":11,"y":-171},{"curve":0,"vis":true,"color":"FFFFFF","bCoef":0,"trait":"line","v0":12,"v1":13},{"curve":-180,"vis":true,"color":"FFFFFF","bCoef":0,"trait":"line","v0":9,"v1":8},{"curve":180,"vis":true,"color":"FFFFFF","bCoef":0,"trait":"line","v0":15,"v1":14},{"curve":0,"vis":true,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":2,"v1":1,"_selected":true},{"curve":0,"vis":true,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":6,"v1":5},{"vis":false,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":16,"v1":17,"cMask":["ball"],"x":330},{"vis":false,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":18,"v1":19,"cMask":["ball"],"x":-330},{"vis":false,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":20,"v1":21,"cMask":["ball"],"x":-330},{"vis":false,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":22,"v1":23,"cMask":["ball"],"x":330},{"v0":24,"v1":25,"trait":"kickOffBarrier"},{"v0":26,"v1":27,"trait":"kickOffBarrier"},{"v0":28,"v1":29,"curve":0,"color":"F8F8F8","cMask":["red","blue","ball"],"trait":"goalNet","pos":[-700,-80],"y":-80},{"v0":29,"v1":30,"color":"F8F8F8","cMask":["red","blue","ball"],"trait":"goalNet","x":-590},{"v0":30,"v1":31,"curve":0,"color":"F8F8F8","cMask":["red","blue","ball"],"trait":"goalNet","pos":[-700,80],"y":80},{"v0":32,"v1":33,"curve":0,"color":"F8F8F8","cMask":["red","blue","ball"],"trait":"goalNet","pos":[-700,-80],"y":-80},{"v0":33,"v1":34,"color":"F8F8F8","cMask":["red","blue","ball"],"trait":"goalNet","x":-590},{"v0":34,"v1":35,"curve":0,"color":"F8F8F8","cMask":["red","blue","ball"],"trait":"goalNet","pos":[-700,80],"y":80},{"v0":36,"v1":37,"curve":94.0263701017,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":39,"v1":38,"curve":86.632306418889,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":40,"v1":41,"curve":-94.026370101699,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":37,"v1":41,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":43,"v1":42,"curve":-86.632306418888,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":45,"v1":44,"curve":86.632306418884,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":47,"v1":46,"curve":-86.632306418899,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":48,"v1":49,"curve":-94.026370101699,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":50,"v1":51,"curve":94.026370101699,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":52,"v1":53,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":390},{"v0":55,"v1":54,"curve":-180.00692920292,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-375},{"v0":54,"v1":55,"curve":-180.00218240614,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-375},{"v0":57,"v1":56,"curve":-179.64823645332,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-375},{"v0":56,"v1":57,"curve":-180.35758668147,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-375},{"v0":59,"v1":58,"curve":-180.02357323962,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-375},{"v0":58,"v1":59,"curve":-180.00924102399,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-375},{"v0":61,"v1":60,"curve":-180.06885755885,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-375},{"v0":60,"v1":61,"curve":-180.02948353257,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-375},{"v0":63,"v1":62,"curve":-179.99869069543,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":375},{"v0":62,"v1":63,"curve":-179.99939258776,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":375},{"v0":65,"v1":64,"curve":-180.08826047163,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":375},{"v0":64,"v1":65,"curve":-179.91186753664,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":375},{"v0":67,"v1":66,"curve":-179.99528711105,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":375},{"v0":66,"v1":67,"curve":-179.99743836358,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":375},{"v0":69,"v1":68,"curve":-179.98626041101,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":375},{"v0":68,"v1":69,"curve":-179.99175181595,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":375},{"v0":71,"v1":70,"curve":-180.04715562398,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-277.5},{"v0":70,"v1":71,"curve":-179.95294709391,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-277.5},{"v0":73,"v1":72,"curve":-179.95715750564,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-277.5},{"v0":72,"v1":73,"curve":-179.89943871875,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-277.5},{"v0":75,"v1":74,"curve":-179.94773754738,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-277.5},{"v0":74,"v1":75,"curve":-179.98221351296,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-277.5},{"v0":77,"v1":76,"curve":-180.4151727218,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-277.5},{"v0":76,"v1":77,"curve":-179.58764458796,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-277.5},{"v0":79,"v1":78,"curve":-180.00086646359,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":277.5},{"v0":78,"v1":79,"curve":-180.01965986376,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":277.5},{"v0":81,"v1":80,"curve":-180.03532601389,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":277.5},{"v0":80,"v1":81,"curve":-179.99380079,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":277.5},{"v0":83,"v1":82,"curve":-180.0044468452,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":277.5},{"v0":82,"v1":83,"curve":-180.01386779847,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":277.5},{"v0":85,"v1":84,"curve":-180.05158287563,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":277.5},{"v0":84,"v1":85,"curve":-180.01212223878,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":277.5},{"v0":86,"v1":87,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-240},{"v0":88,"v1":89,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-120},{"v0":90,"v1":91,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":240},{"v0":92,"v1":93,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":120},{"v0":94,"v1":95,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-381},{"v0":96,"v1":97,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-240,"y":123},{"v0":98,"v1":99,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-240,"y":123},{"v0":100,"v1":101,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-240,"y":-123},{"v0":102,"v1":103,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-240,"y":-123},{"v0":104,"v1":105,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-381},{"v0":106,"v1":107,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":381},{"v0":108,"v1":109,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":381}],"goals":[{"p0":[-374.25,-62.053454903872],"p1":[-374.25,64.043361696331],"team":"red"},{"p0":[374.25,62],"p1":[374.25,-62],"team":"blue"}],"discs":[{"radius":3.9405255187564,"pos":[-368.53340356886,64.043361696331],"color":"6666CC","trait":"goalPost","y":80},{"radius":3.9405255187564,"pos":[-368.53340356886,-62.053454903872],"color":"6666CC","trait":"goalPost","y":-80,"x":-560},{"radius":3.9405255187564,"pos":[368.9681846993,-62.144998272018],"color":"6666CC","trait":"goalPost","y":80},{"radius":3.9405255187564,"pos":[368.09926357786,63.94882446641],"color":"6666CC","trait":"goalPost","y":-80,"x":-560},{"radius":3,"invMass":0,"pos":[-368,-171],"color":"FFCC00","bCoef":0.1,"trait":"line"},{"radius":3,"invMass":0,"pos":[-368,171],"color":"FFCC00","bCoef":0.1,"trait":"line"},{"radius":3,"invMass":0,"pos":[368,171],"color":"FFCC00","bCoef":0.1,"trait":"line"},{"radius":3,"invMass":0,"pos":[368,-171],"color":"FFCC00","bCoef":0.1,"trait":"line"}],"planes":[{"normal":[0,1],"dist":-171,"trait":"ballArea"},{"normal":[0,-1],"dist":-171,"trait":"ballArea"},{"normal":[0,1],"dist":-200,"bCoef":0.2,"cMask":["all"]},{"normal":[0,-1],"dist":-200,"bCoef":0.2,"cMask":["all"]},{"normal":[1,0],"dist":-420,"bCoef":0.2,"cMask":["all"]},{"normal":[-1,0],"dist":-420,"bCoef":0.2,"cMask":["all"]}],"traits":{"ballArea":{"vis":false,"bCoef":1,"cMask":["ball"]},"goalPost":{"radius":8,"invMass":0,"bCoef":1},"goalNet":{"vis":true,"bCoef":0.1,"cMask":["all"]},"kickOffBarrier":{"vis":false,"bCoef":0.1,"cGroup":["redKO","blueKO"],"cMask":["red","blue"]},"line":{"vis":true,"bCoef":0,"cMask":[""]},"arco":{"radius":2,"cMask":["n\/d"],"color":"cccccc"}},"playerPhysics":{"acceleration":0.11,"kickingAcceleration":0.083,"kickStrength":5,"bCoef":0},"ballPhysics":{"radius":6.25,"color":"FFCC00","bCoef":0.4,"invMass":1.5,"damping":0.99}}'
-var classicMap = `{
+const aloneMap = '{"name":"Futsal No Goals from HaxMaps","width":420,"height":200,"spawnDistance":180,"bg":{"type":"hockey","width":368,"height":171,"kickOffRadius":65,"cornerRadius":0},"vertexes":[{"x":-368,"y":171,"trait":"ballArea","cMask":["ball"],"bCoef":1},{"x":-368,"y":65,"trait":"ballArea","cMask":["ball"],"bCoef":1,"_selected":"segment"},{"x":-368,"y":-65,"trait":"ballArea","cMask":["ball"],"bCoef":1,"_selected":"segment"},{"x":-368,"y":-171,"trait":"ballArea","bCoef":1,"cMask":["ball"]},{"x":368,"y":171,"trait":"ballArea","cMask":["ball"],"bCoef":1},{"x":368,"y":65,"trait":"ballArea","cMask":["ball"],"bCoef":1},{"x":368,"y":-65,"trait":"ballArea","cMask":["ball"],"bCoef":1},{"x":368,"y":-171,"trait":"ballArea","cMask":["ball"],"bCoef":1},{"x":0,"y":65,"trait":"kickOffBarrier"},{"x":0,"y":-65,"trait":"line"},{"bCoef":1,"trait":"ballArea","x":368,"y":171},{"bCoef":1,"trait":"ballArea","x":368,"y":-171},{"bCoef":0,"trait":"line","x":0,"y":171},{"bCoef":0,"trait":"line","x":0,"y":-171},{"x":0,"y":65,"trait":"kickOffBarrier"},{"x":0,"y":-65,"trait":"kickOffBarrier"},{"x":377,"y":-65,"trait":"line","cMask":["ball"],"bCoef":1},{"x":377,"y":-171,"trait":"ballArea","cMask":["ball"],"bCoef":1},{"x":-377,"y":-65,"trait":"line","cMask":["ball"],"bCoef":1},{"x":-377,"y":-171,"trait":"ballArea","cMask":["ball"],"bCoef":1},{"x":-377,"y":65,"trait":"line","cMask":["ball"],"bCoef":1},{"x":-377,"y":171,"trait":"ballArea","cMask":["ball"],"bCoef":1},{"x":377,"y":65,"trait":"line","cMask":["ball"],"bCoef":1},{"x":377,"y":171,"trait":"ballArea","cMask":["ball"],"bCoef":1},{"x":0,"y":199,"trait":"kickOffBarrier"},{"x":0,"y":65,"trait":"kickOffBarrier"},{"x":0,"y":-65,"trait":"kickOffBarrier"},{"x":0,"y":-199,"trait":"kickOffBarrier"},{"x":-368.53340356886,"y":-62.053454903872,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[-700,-80]},{"x":-400.05760771891,"y":-62.053454903872,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[-700,-80]},{"x":-400.05760771891,"y":64.043361696331,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[-700,80]},{"x":-368.53340356886,"y":64.043361696331,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[-700,80]},{"x":368.09926357786,"y":63.94882446641,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[-700,-80]},{"x":400,"y":64,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[-700,-80]},{"x":400,"y":-61.927767991658,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[-700,80]},{"x":368.9681846993,"y":-62.144998272018,"cMask":["red","blue","ball"],"trait":"goalNet","curve":0,"color":"F8F8F8","pos":[-700,80]},{"x":-368,"y":-142.37229643041,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":-90},{"x":-260.90035258157,"y":-50.168480548544,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":0},{"x":-368,"y":-160.81305960678,"bCoef":0.1,"trait":"line","curve":-90},{"x":-358.5379338963,"y":-171,"bCoef":0.1,"trait":"line","curve":-90},{"x":-368,"y":141.33175243687,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":90},{"x":-260.90035258157,"y":49.127936555002,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":0},{"x":-368,"y":159.77251561324,"bCoef":0.1,"trait":"line","curve":90},{"x":-358.5379338963,"y":171,"bCoef":0.1,"trait":"line","curve":90},{"x":368,"y":159.77251561324,"bCoef":0.1,"trait":"line","curve":-90},{"x":358.36266315432,"y":171,"bCoef":0.1,"trait":"line","curve":-90},{"x":368,"y":-160.81305960678,"bCoef":0.1,"trait":"line","curve":90},{"x":358.36266315432,"y":-171,"bCoef":0.1,"trait":"line","curve":90},{"x":368,"y":-142.37229643041,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":90},{"x":260.72508183959,"y":-50.168480548544,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":90},{"x":368,"y":141.33175243687,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":-90},{"x":260.72508183959,"y":49.127936555002,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":-90},{"x":260.72508183959,"y":-50.168480548544,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":0},{"x":260.72508183959,"y":49.127936555002,"bCoef":0.1,"trait":"line","color":"F8F8F8","curve":0},{"x":-250.86909422732,"y":-1.2295321189394,"bCoef":0.1,"trait":"line","curve":180},{"x":-250.86909422732,"y":0.18898812539692,"bCoef":0.1,"trait":"line","curve":180},{"x":-250.86909422732,"y":-2.6480523632758,"bCoef":0.1,"trait":"line","curve":180},{"x":-250.86909422732,"y":1.6075083697333,"bCoef":0.1,"trait":"line","curve":180},{"x":-250.86909422732,"y":0.89824824756514,"bCoef":0.1,"trait":"line","curve":180},{"x":-250.86909422732,"y":-1.9387922411076,"bCoef":0.1,"trait":"line","curve":180},{"x":-250.86909422732,"y":1.9621384308174,"bCoef":0.1,"trait":"line","curve":180},{"x":-250.86909422732,"y":-3.0026824243599,"bCoef":0.1,"trait":"line","curve":180},{"x":250.69382348534,"y":-1.2295321189394,"bCoef":0.1,"trait":"line","curve":180},{"x":250.69382348534,"y":0.18898812539692,"bCoef":0.1,"trait":"line","curve":180},{"x":250.69382348534,"y":-2.6480523632758,"bCoef":0.1,"trait":"line","curve":180},{"x":250.69382348534,"y":1.6075083697333,"bCoef":0.1,"trait":"line","curve":180},{"x":250.69382348534,"y":0.89824824756514,"bCoef":0.1,"trait":"line","curve":180},{"x":250.69382348534,"y":-1.9387922411076,"bCoef":0.1,"trait":"line","curve":180},{"x":250.69382348534,"y":1.9621384308174,"bCoef":0.1,"trait":"line","curve":180},{"x":250.69382348534,"y":-3.0026824243599,"bCoef":0.1,"trait":"line","curve":180},{"x":-185.66591492467,"y":-1.2295321189394,"bCoef":0.1,"trait":"line","curve":180},{"x":-185.66591492467,"y":0.18898812539692,"bCoef":0.1,"trait":"line","curve":180},{"x":-185.66591492467,"y":-2.6480523632758,"bCoef":0.1,"trait":"line","curve":180},{"x":-185.66591492467,"y":1.6075083697333,"bCoef":0.1,"trait":"line","curve":180},{"x":-185.66591492467,"y":0.89824824756514,"bCoef":0.1,"trait":"line","curve":180},{"x":-185.66591492467,"y":-1.9387922411076,"bCoef":0.1,"trait":"line","curve":180},{"x":-185.66591492467,"y":1.9621384308174,"bCoef":0.1,"trait":"line","curve":180},{"x":-185.66591492467,"y":-3.0026824243599,"bCoef":0.1,"trait":"line","curve":180},{"x":185.49064418269,"y":-1.2295321189394,"bCoef":0.1,"trait":"line","curve":180},{"x":185.49064418269,"y":0.18898812539692,"bCoef":0.1,"trait":"line","curve":180},{"x":185.49064418269,"y":-2.6480523632758,"bCoef":0.1,"trait":"line","curve":180},{"x":185.49064418269,"y":1.6075083697333,"bCoef":0.1,"trait":"line","curve":180},{"x":185.49064418269,"y":0.89824824756514,"bCoef":0.1,"trait":"line","curve":180},{"x":185.49064418269,"y":-1.9387922411076,"bCoef":0.1,"trait":"line","curve":180},{"x":185.49064418269,"y":1.9621384308174,"bCoef":0.1,"trait":"line","curve":180},{"x":185.49064418269,"y":-3.0026824243599,"bCoef":0.1,"trait":"line","curve":180},{"x":-160.58776903904,"y":-159.39453936245,"bCoef":0.1,"trait":"line"},{"x":-160.58776903904,"y":-182.09086327183,"bCoef":0.1,"trait":"line"},{"x":-80.337702205015,"y":-159.39453936245,"bCoef":0.1,"trait":"line"},{"x":-80.337702205015,"y":-182.09086327183,"bCoef":0.1,"trait":"line"},{"x":160.41249829706,"y":-159.39453936245,"bCoef":0.1,"trait":"line"},{"x":160.41249829706,"y":-182.09086327183,"bCoef":0.1,"trait":"line"},{"x":80.162431463036,"y":-159.39453936245,"bCoef":0.1,"trait":"line"},{"x":80.162431463036,"y":-182.09086327183,"bCoef":0.1,"trait":"line"},{"x":-254.88159756902,"y":-171,"bCoef":0.1,"trait":"line"},{"x":-254.88159756902,"y":-182.09086327183,"bCoef":0.1,"trait":"line"},{"x":-371.91294503531,"y":-87.759267023458,"bCoef":0.1,"trait":"line"},{"x":-384.61920561736,"y":-87.759267023458,"bCoef":0.1,"trait":"line"},{"x":371.73767429333,"y":-87.759267023458,"bCoef":0.1,"trait":"line"},{"x":384.44393487538,"y":-87.759267023458,"bCoef":0.1,"trait":"line"},{"x":-371.91294503531,"y":86.718723029916,"bCoef":0.1,"trait":"line"},{"x":-384.61920561736,"y":86.718723029916,"bCoef":0.1,"trait":"line"},{"x":371.73767429333,"y":86.718723029916,"bCoef":0.1,"trait":"line"},{"x":384.44393487538,"y":86.718723029916,"bCoef":0.1,"trait":"line"},{"x":-254.88159756902,"y":171,"bCoef":0.1,"trait":"line"},{"x":-254.88159756902,"y":181.05031927829,"bCoef":0.1,"trait":"line"},{"x":254.70632682704,"y":-171,"bCoef":0.1,"trait":"line"},{"x":254.70632682704,"y":-182.09086327183,"bCoef":0.1,"trait":"line"},{"x":254.70632682704,"y":171,"bCoef":0.1,"trait":"line"},{"x":254.70632682704,"y":181.05031927829,"bCoef":0.1,"trait":"line"}],"segments":[{"v0":0,"v1":1,"trait":"ballArea"},{"v0":2,"v1":3,"trait":"ballArea"},{"v0":4,"v1":5,"trait":"ballArea"},{"v0":6,"v1":7,"trait":"ballArea"},{"v0":8,"v1":9,"trait":"kickOffBarrier","curve":180,"cGroup":["blueKO"]},{"v0":8,"v1":9,"trait":"kickOffBarrier","curve":-180,"cGroup":["redKO"]},{"vis":true,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":1,"v1":0,"cMask":["ball"],"x":-368},{"vis":true,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":5,"v1":4,"cMask":["ball"],"x":368},{"vis":true,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":2,"v1":3,"cMask":["ball"],"x":-368},{"vis":true,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":6,"v1":7,"cMask":["ball"],"x":368},{"vis":true,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":0,"v1":10,"y":171},{"vis":true,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":3,"v1":11,"y":-171},{"curve":0,"vis":true,"color":"FFFFFF","bCoef":0,"trait":"line","v0":12,"v1":13},{"curve":-180,"vis":true,"color":"FFFFFF","bCoef":0,"trait":"line","v0":9,"v1":8},{"curve":180,"vis":true,"color":"FFFFFF","bCoef":0,"trait":"line","v0":15,"v1":14},{"curve":0,"vis":true,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":2,"v1":1,"_selected":true},{"curve":0,"vis":true,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":6,"v1":5},{"vis":false,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":16,"v1":17,"cMask":["ball"],"x":330},{"vis":false,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":18,"v1":19,"cMask":["ball"],"x":-330},{"vis":false,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":20,"v1":21,"cMask":["ball"],"x":-330},{"vis":false,"color":"FFFFFF","bCoef":1,"trait":"ballArea","v0":22,"v1":23,"cMask":["ball"],"x":330},{"v0":24,"v1":25,"trait":"kickOffBarrier"},{"v0":26,"v1":27,"trait":"kickOffBarrier"},{"v0":28,"v1":29,"curve":0,"color":"F8F8F8","cMask":["red","blue","ball"],"trait":"goalNet","pos":[-700,-80],"y":-80},{"v0":29,"v1":30,"color":"F8F8F8","cMask":["red","blue","ball"],"trait":"goalNet","x":-590},{"v0":30,"v1":31,"curve":0,"color":"F8F8F8","cMask":["red","blue","ball"],"trait":"goalNet","pos":[-700,80],"y":80},{"v0":32,"v1":33,"curve":0,"color":"F8F8F8","cMask":["red","blue","ball"],"trait":"goalNet","pos":[-700,-80],"y":-80},{"v0":33,"v1":34,"color":"F8F8F8","cMask":["red","blue","ball"],"trait":"goalNet","x":-590},{"v0":34,"v1":35,"curve":0,"color":"F8F8F8","cMask":["red","blue","ball"],"trait":"goalNet","pos":[-700,80],"y":80},{"v0":36,"v1":37,"curve":94.0263701017,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":39,"v1":38,"curve":86.632306418889,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":40,"v1":41,"curve":-94.026370101699,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":37,"v1":41,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":43,"v1":42,"curve":-86.632306418888,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":45,"v1":44,"curve":86.632306418884,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":47,"v1":46,"curve":-86.632306418899,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":48,"v1":49,"curve":-94.026370101699,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":50,"v1":51,"curve":94.026370101699,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line"},{"v0":52,"v1":53,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":390},{"v0":55,"v1":54,"curve":-180.00692920292,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-375},{"v0":54,"v1":55,"curve":-180.00218240614,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-375},{"v0":57,"v1":56,"curve":-179.64823645332,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-375},{"v0":56,"v1":57,"curve":-180.35758668147,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-375},{"v0":59,"v1":58,"curve":-180.02357323962,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-375},{"v0":58,"v1":59,"curve":-180.00924102399,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-375},{"v0":61,"v1":60,"curve":-180.06885755885,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-375},{"v0":60,"v1":61,"curve":-180.02948353257,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-375},{"v0":63,"v1":62,"curve":-179.99869069543,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":375},{"v0":62,"v1":63,"curve":-179.99939258776,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":375},{"v0":65,"v1":64,"curve":-180.08826047163,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":375},{"v0":64,"v1":65,"curve":-179.91186753664,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":375},{"v0":67,"v1":66,"curve":-179.99528711105,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":375},{"v0":66,"v1":67,"curve":-179.99743836358,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":375},{"v0":69,"v1":68,"curve":-179.98626041101,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":375},{"v0":68,"v1":69,"curve":-179.99175181595,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":375},{"v0":71,"v1":70,"curve":-180.04715562398,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-277.5},{"v0":70,"v1":71,"curve":-179.95294709391,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-277.5},{"v0":73,"v1":72,"curve":-179.95715750564,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-277.5},{"v0":72,"v1":73,"curve":-179.89943871875,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-277.5},{"v0":75,"v1":74,"curve":-179.94773754738,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-277.5},{"v0":74,"v1":75,"curve":-179.98221351296,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-277.5},{"v0":77,"v1":76,"curve":-180.4151727218,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-277.5},{"v0":76,"v1":77,"curve":-179.58764458796,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-277.5},{"v0":79,"v1":78,"curve":-180.00086646359,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":277.5},{"v0":78,"v1":79,"curve":-180.01965986376,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":277.5},{"v0":81,"v1":80,"curve":-180.03532601389,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":277.5},{"v0":80,"v1":81,"curve":-179.99380079,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":277.5},{"v0":83,"v1":82,"curve":-180.0044468452,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":277.5},{"v0":82,"v1":83,"curve":-180.01386779847,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":277.5},{"v0":85,"v1":84,"curve":-180.05158287563,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":277.5},{"v0":84,"v1":85,"curve":-180.01212223878,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":277.5},{"v0":86,"v1":87,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-240},{"v0":88,"v1":89,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-120},{"v0":90,"v1":91,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":240},{"v0":92,"v1":93,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":120},{"v0":94,"v1":95,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-381},{"v0":96,"v1":97,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-240,"y":123},{"v0":98,"v1":99,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-240,"y":123},{"v0":100,"v1":101,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-240,"y":-123},{"v0":102,"v1":103,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-240,"y":-123},{"v0":104,"v1":105,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":-381},{"v0":106,"v1":107,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":381},{"v0":108,"v1":109,"curve":0,"vis":true,"color":"F8F8F8","bCoef":0.1,"trait":"line","x":381}],"goals":[{"p0":[-374.25,-62.053454903872],"p1":[-374.25,64.043361696331],"team":"red"},{"p0":[374.25,62],"p1":[374.25,-62],"team":"blue"}],"discs":[{"radius":3.9405255187564,"pos":[-368.53340356886,64.043361696331],"color":"6666CC","trait":"goalPost","y":80},{"radius":3.9405255187564,"pos":[-368.53340356886,-62.053454903872],"color":"6666CC","trait":"goalPost","y":-80,"x":-560},{"radius":3.9405255187564,"pos":[368.9681846993,-62.144998272018],"color":"6666CC","trait":"goalPost","y":80},{"radius":3.9405255187564,"pos":[368.09926357786,63.94882446641],"color":"6666CC","trait":"goalPost","y":-80,"x":-560},{"radius":3,"invMass":0,"pos":[-368,-171],"color":"FFCC00","bCoef":0.1,"trait":"line"},{"radius":3,"invMass":0,"pos":[-368,171],"color":"FFCC00","bCoef":0.1,"trait":"line"},{"radius":3,"invMass":0,"pos":[368,171],"color":"FFCC00","bCoef":0.1,"trait":"line"},{"radius":3,"invMass":0,"pos":[368,-171],"color":"FFCC00","bCoef":0.1,"trait":"line"}],"planes":[{"normal":[0,1],"dist":-171,"trait":"ballArea"},{"normal":[0,-1],"dist":-171,"trait":"ballArea"},{"normal":[0,1],"dist":-200,"bCoef":0.2,"cMask":["all"]},{"normal":[0,-1],"dist":-200,"bCoef":0.2,"cMask":["all"]},{"normal":[1,0],"dist":-420,"bCoef":0.2,"cMask":["all"]},{"normal":[-1,0],"dist":-420,"bCoef":0.2,"cMask":["all"]}],"traits":{"ballArea":{"vis":false,"bCoef":1,"cMask":["ball"]},"goalPost":{"radius":8,"invMass":0,"bCoef":1},"goalNet":{"vis":true,"bCoef":0.1,"cMask":["all"]},"kickOffBarrier":{"vis":false,"bCoef":0.1,"cGroup":["redKO","blueKO"],"cMask":["red","blue"]},"line":{"vis":true,"bCoef":0,"cMask":[""]},"arco":{"radius":2,"cMask":["n\/d"],"color":"cccccc"}},"playerPhysics":{"acceleration":0.11,"kickingAcceleration":0.083,"kickStrength":5,"bCoef":0},"ballPhysics":{"radius":6.25,"color":"FFCC00","bCoef":0.4,"invMass":1.5,"damping":0.99}}';
+const classicMap = `{
 
 	"name" : "『 𝖥𝗎𝗍𝗌𝖺𝗅 𝟣 𝗏𝗌 𝟣  𝟤 𝗏𝗌 𝟤  -  𝙇𝙋𝙁 𝙈𝙖𝙥 』",
 
@@ -483,8 +483,8 @@ var classicMap = `{
 		"kickingAcceleration" : 0.083
 
 	}
-}`
-var bigMap = `{
+}`;
+const bigMap = `{
 
 	"name" : "✨「 𝗟𝗣𝗙  𝗦𝘁𝗮𝗱𝗶𝘂𝗺 🇵🇪 」✨",
 
@@ -967,64 +967,65 @@ var bigMap = `{
 		
 
 	}
-}`
+}`;
 
-/* OPTIONS */ 
-var afkLimit = 12;
-var drawTimeLimit = Infinity;
-var maxTeamSize = 4;
-var slowMode = 0;
+/* OPTIONS */
+const afkLimit = 12;
+const drawTimeLimit = Infinity;
+const maxTeamSize = 4;
+let slowMode = 0;
 
 /* PLAYERS */
 const Team = { SPECTATORS: 0, RED: 1, BLUE: 2 };
-var extendedP = [];
-const eP = { ID: 0, AUTH: 1, CONN: 2, AFK: 3, ACT: 4, GK: 5, MUTE: 6 };
-// Stats: "Auth" : '["0-Games", "1-Wins", "2-Draws", "3-Losses", "4-Winrate", "5-Goals", "6-Assists", "7-GK", "8-CS", "9-CS%", "10-Role", "11-Nick", "12-Elo"]'
-const Ss = { GA: 0, WI: 1, DR: 2, LS: 3, WR: 4, GL: 5, AS: 6, GK: 7, CS: 8, CP: 9, ELO: 10, RL: 11, NK: 12}
-var players;
-var teamR;
-var teamB;
-var teamS;
+const extendedP = [];
+// Player Object ID, AUTH, CONNECTION, AFK STATUS, ACTIVITY, GOALKEEPER, MUTE
+const eP = { ID: 0, AUTH: 1, CONN: 2, AFK: 3, ACT: 4, GK: 5, MUTE: 6};
+// Stats: "Auth" : '["0-Games", "1-Wins", "2-Draws", "3-Losses", "4-Winrate", "5-Goals", "6-Assists", "7-GK", "8-CS", "9-CS%", "10- ELO", "11-Role", "12-Nick", "13-Emoji", "14-Color", "15-MSG"]'
+const Ss = { GA: 0, WI: 1, DR: 2, LS: 3, WR: 4, GL: 5, AS: 6, GK: 7, CS: 8, CP: 9, ELO: 10, RL: 11, NK: 12, EMOJI: 13, COLOR: 14, MSG: 15};
+let players;
+let teamR;
+let teamB;
+let teamS;
 
 /* GAME */
 
-var lastTeamTouched;
-var lastPlayersTouched; // helps track Goals
-var countAFK = false; // Helps track Activity
-var activePlay = false; // helps track ball Posession
-var goldenGoal = false;
-var SMSet = new Set(); // Slowmode
-var banList = []; // helps track bans
+let lastTeamTouched; // helps track Goals
+let lastPlayersTouched; // helps track Goals
+let countAFK = false; // Helps track Activity
+let activePlay = false; // helps track ball Posession
+let goldenGoal = false;
+const SMSet = new Set(); // Slowmode
+let banList = []; // helps track bans
 
 /* STATS */
 
-var game;
-var GKList = ["",""];
-var Rposs = 0;
-var Bposs = 0;
-var point = [{"x": 0, "y": 0}, {"x": 0, "y": 0}]; // created to get ball speed
-var ballSpeed;
-var lastWinner = Team.SPECTATORS;
-var streak = 0;
-var allBlues = []; // This is to count the players who should be counted for the stats. This includes players who left after the game has started, doesn't include those who came too late or ...
-var allReds = []; // ... those who came in a very unequal game.
+let game;
+let GKList = ["", ""];
+let Rposs = 0;
+let Bposs = 0;
+const point = [{"x": 0, "y": 0}, {"x": 0, "y": 0}]; // created to get ball speed
+let ballSpeed;
+let lastWinner = Team.SPECTATORS;
+let streak = 0;
+let allBlues = []; // This is to count the players who should be counted for the stats. This includes players who left after the game has started, doesn't include those who came too late or ...
+let allReds = []; // ... those who came in a very unequal game.
 
 /* BALANCE & CHOOSE */
 
-var inChooseMode = false; // This variable enables to distinguish the 2 phases of playing and choosing which should be dealt with very differently
-var redCaptainChoice = "";
-var blueCaptainChoice = "";
-var chooseTime = 20;
-var timeOutCap;
+let inChooseMode = false; // This variable enables to distinguish the 2 phases of playing and choosing which should be dealt with very differently
+let redCaptainChoice = "";
+let blueCaptainChoice = "";
+const chooseTime = 20;
+let timeOutCap;
 
 /* AUXILIARY */
 
-var checkTimeVariable = false; // This is created so the chat doesn't get spammed when a game is ending via timeLimit
-var statNumber = 0; // This allows the room to be given stat information every X minutes
-var endGameVariable = false; // This variable with the one below helps distinguish the cases where games are stopped because they have finished to the ones where games are stopped due to player movements or resetting teams
-var resettingTeams = false;
-var capLeft = false;
-var statInterval = 6;
+let checkTimeVariable = false; // This is created so the chat doesn't get spammed when a game is ending via timeLimit
+let statNumber = 0; // This allows the room to be given stat information every X minutes
+let endGameVariable = false; // This variable with the one below helps distinguish the cases where games are stopped because they have finished to the ones where games are stopped due to player movements or resetting teams
+let resettingTeams = false;
+let capLeft = false;
+const statInterval = 6;
 
 loadMap(aloneMap, 0, 0);
 
@@ -1047,14 +1048,37 @@ function Game(date, scores, goals) {
 
 /* AUXILIARY FUNCTIONS */
 
-function getRandomInt(max) { // returns a random number from 0 to max-1
+
+
+/**
+ * The getRandomInt function generates a random integer between 0 and the specified maximum value.
+ * @param max - The maximum value that the random integer can be.
+ * @returns a random integer between 0 (inclusive) and the specified maximum value (exclusive).
+ */
+function getRandomInt(max) {
 	return Math.floor(Math.random() * Math.floor(max));
 }
 
-function getTime(scores) { // returns the current time of the game
+
+/**
+ * The getTime function returns the current time of the game in the format [MM:SS].
+ * @param scores - The parameter "scores" is an object that contains information about the game,
+ * including the current time.
+ * @returns a string representing the current time of the game in the format "[MM:SS]".
+ */
+function getTime(scores) {
 	return "[" + Math.floor(Math.floor(scores.time/60)/10).toString() + Math.floor(Math.floor(scores.time/60)%10).toString() + ":" + Math.floor(Math.floor(scores.time - (Math.floor(scores.time/60) * 60))/10).toString() + Math.floor(Math.floor(scores.time - (Math.floor(scores.time/60) * 60))%10).toString() + "]"
 }
 
+
+/**
+ * The function calculates the distance between two points in a two-dimensional space.
+ * @param p1 - The parameter p1 represents the first point, which is an object with properties x and y
+ * representing the coordinates of the point.
+ * @param p2 - The above code defines a function called `pointDistance` that calculates the distance
+ * between two points in a two-dimensional space.
+ * @returns the distance between two points, calculated using the Pythagorean theorem.
+ */
 function pointDistance(p1, p2) {
 	var d1 = p1.x - p2.x;
 	var d2 = p1.y - p2.y;
@@ -1062,13 +1086,13 @@ function pointDistance(p1, p2) {
 }
 
 
-
-/* FOR RANKING */
-
-/* END RANKING */
-
 /* BUTTONS */
 
+/**
+ * Top button that choose the player that is first in the queue.
+ * @returns nothing if the condition `teamS.length == 0` is true. Otherwise, it is returning the result
+ * of the team assignment operations.
+ */
 function topBtn() {
 	if (teamS.length == 0) {
 		return;
@@ -1090,6 +1114,10 @@ function topBtn() {
 	}
 }
 
+/**
+ * The function randomly assigns players to the red or blue team based on the current team sizes.
+ * @returns nothing if the condition `teamS.length == 0` is true. Otherwise, it returns undefined.
+ */
 function randomBtn() {
 	if (teamS.length == 0) {
 		return;
@@ -1113,6 +1141,10 @@ function randomBtn() {
 	}
 }
 
+/**
+ * The function "blueToSpecBtn" resets the teams in a game by moving all players from the blue team to
+ * the spectators team.
+ */
 function blueToSpecBtn() {
 	resettingTeams = true;
 	setTimeout(() => { resettingTeams = false; }, 100);
@@ -1121,6 +1153,10 @@ function blueToSpecBtn() {
 	}
 }
 
+/**
+ * The function "redToSpecBtn" resets the teams of all players in the "teamR" array to the spectator
+ * team.
+ */
 function redToSpecBtn() {
 	resettingTeams = true;
 	setTimeout(() => { resettingTeams = false; }, 100);
@@ -1129,6 +1165,9 @@ function redToSpecBtn() {
 	}
 }
 
+/**
+ * The function `resetBtn` resets the teams in a game by moving players to the spectators team.
+ */
 function resetBtn() {
 	resettingTeams = true;
 	setTimeout(() => { resettingTeams = false; }, 100);
@@ -1152,6 +1191,10 @@ function resetBtn() {
 	}
 }
 
+
+/**
+ * The function changes the team of all players in teamB to the red team.
+ */
 function blueToRedBtn() {
 	resettingTeams = true;
 	setTimeout(() => { resettingTeams = false; }, 100);
@@ -1162,10 +1205,15 @@ function blueToRedBtn() {
 
 /* GAME FUNCTIONS */
 
+/* Setting the team colors for a game room. */
 room.setTeamColors(Team.BLUE, 60, 0xFFFFFF, [0x0080ff, 0x0080ff, 0x0080ff]);
 room.setTeamColors(Team.RED, 60, 0xFFFFFF, [0xFF4D40, 0xFF4D40, 0xFF4D40]);
 
 
+/**
+ * The function checks the time remaining in a game and performs certain actions based on the time and
+ * game scores.
+ */
 function checkTime() {
 	const scores = room.getScores();
 	game.scores = scores;
@@ -1200,6 +1248,12 @@ function checkTime() {
 	}
 }
 
+/**
+ * The function "endGame" handles the end of a game by updating scores, determining the winner,
+ * announcing the result, and updating statistics.
+ * @param winner - The `winner` parameter in the `endGame` function represents the team that won the
+ * game. It can have one of the following values: Team.BLUE (blue team won), Team.RED (red team won).
+ */
 function endGame(winner) { // handles the end of a game
 	players.length >= 2 * maxTeamSize - 1 ? activateChooseMode() : null;
 	const scores = room.getScores();
@@ -1225,22 +1279,37 @@ function endGame(winner) { // handles the end of a game
 	updateStats();
 }
 
+/**
+ * The function `quickRestart` stops the current game in a room and then starts a new game after a
+ * 2-second delay.
+ */
 function quickRestart() {
 	room.stopGame();
 	setTimeout(() => { room.startGame(); }, 2000);
 }
 
+
+/**
+ * The function resumeGame() starts a game after a delay of 2 seconds and then immediately unpauses the
+ * game after a delay of 1 second.
+ */
 function resumeGame() {
 	setTimeout(() => { room.startGame(); }, 2000);
 	setTimeout(() => { room.pauseGame(false); }, 1000);
 }
 
+/**
+ * The function activates the choose mode and sends an announcement message.
+ */
 function activateChooseMode() {
 	inChooseMode = true;
 	slowMode = 2;
 	room.sendAnnouncement(Bot + "Reconfigurando juego!", null, 0x4ffaff, "bold", 1);
 }
 
+/**
+ * The function "deactivateChooseMode" is used to deactivate the choose mode and reset the choice variables.
+ */
 function deactivateChooseMode() {
 	inChooseMode = false;
 	clearTimeout(timeOutCap);
@@ -1252,6 +1321,16 @@ function deactivateChooseMode() {
 	blueCaptainChoice = "";
 }
 
+/**
+ * The function `loadMap` sets the custom stadium, score limit, and time limit for a game room based on
+ * the provided parameters.
+ * @param map - The "map" parameter is used to specify the stadium or map that will be loaded in the
+ * game. It can be a custom stadium or one of the predefined stadiums such as "Classic" or "Big".
+ * @param scoreLim - The `scoreLim` parameter is used to set the score limit for the game. It
+ * determines how many points a team or player needs to reach in order to win the game.
+ * @param timeLim - The `timeLim` parameter in the `loadMap` function represents the time limit for the
+ * game. It specifies the maximum duration for a game session.
+ */
 function loadMap(map, scoreLim, timeLim) {
 	if (map == aloneMap) {
 		room.setCustomStadium(aloneMap);
@@ -1271,14 +1350,22 @@ function loadMap(map, scoreLim, timeLim) {
 
 /* PLAYER FUNCTIONS */
 
-function updateTeams() { // update the players' list and all the teams' list
+/**
+ * The function updates the players' list and separates them into different teams.
+ */
+function updateTeams() {
 	players = room.getPlayerList().filter((player) => player.id != 0 && !getAFK(player));
 	teamR = players.filter(p => p.team === Team.RED);
 	teamB = players.filter(p => p.team === Team.BLUE);
 	teamS = players.filter(p => p.team === Team.SPECTATORS);
 }
 
-function handleInactivity() { // handles inactivity : players will be kicked after afkLimit
+
+/**
+ * The function handles inactivity by incrementing the activity count for each player and kicking them
+ * if they exceed the afkLimit.
+ */
+function handleInactivity() {
 	if (countAFK && (teamR.length + teamB.length) > 1) {
 		for (var i = 0; i < teamR.length ; i++) {
 			setActivity(teamR[i], getActivity(teamR[i]) + 1);
@@ -1301,14 +1388,35 @@ function handleInactivity() { // handles inactivity : players will be kicked aft
 	}
 }
 
+/**
+ * The function "getAuth" returns the authentication value for a given player.
+ * @param player - The "player" parameter is an object that represents a player.
+ * @returns the value of the `eP.AUTH` property of the first element in the `extendedP` array that has
+ * a matching `player.id` value. If no matching element is found, it returns `null`.
+ */
 function getAuth(player) {
 	return extendedP.filter((a) => a[0] == player.id) != null ? extendedP.filter((a) => a[0] == player.id)[0][eP.AUTH] : null;
 }
 
+/**
+ * The function "getAFK" returns the AFK status of a player.
+ * @param player - The parameter "player" is an object that represents a player in a game.
+ * @returns the AFK status of a player. If the player is found in the extendedP array, it will return
+ * their AFK status. If the player is not found, it will return null.
+ */
 function getAFK(player) {
 	return extendedP.filter((a) => a[0] == player.id) != null ? extendedP.filter((a) => a[0] == player.id)[0][eP.AFK] : null;
 }
 
+/**
+ * The function sets the AFK (Away From Keyboard) status of a player.
+ * @param player - The "player" parameter is an object that represents a player in a game. It likely
+ * has properties such as "id" to identify the player and "AFK" to indicate whether the player is away
+ * from the keyboard (AFK) or not.
+ * @param value - The "value" parameter in the "setAFK" function is used to set the AFK (Away From
+ * Keyboard) status of a player. It can be either true or false, indicating whether the player is AFK
+ * or not.
+ */
 function setAFK(player, value) {
 	extendedP.filter((a) => a[0] == player.id).forEach((player) => player[eP.AFK] = value);
 }
@@ -1339,6 +1447,10 @@ function setMute(player, value) {
 
 /* BALANCE & CHOOSE FUNCTIONS */
 
+/**
+ * The function updates the role of a player in a game and performs various actions related to team
+ * balancing and map loading.
+ */
 function updateRoleOnPlayerIn() {
 	updateTeams();
 	if (inChooseMode) {
@@ -1350,6 +1462,11 @@ function updateRoleOnPlayerIn() {
 	balanceTeams();
 }
 
+/**
+ * The function `updateRoleOnPlayerOut` is responsible for updating the roles and teams of players in a
+ * game, handling situations such as players leaving or joining teams, balancing teams, and ending the
+ * game if there is an abandonment.
+ */
 function updateRoleOnPlayerOut() {
     updateTeams();
 	if (room.getScores() != null) {
@@ -1414,6 +1531,10 @@ function updateRoleOnPlayerOut() {
 	balanceTeams();
 }
 
+/**
+ * The function "balanceTeams" is used to balance the teams in a game based on the number of players
+ * and the current team sizes.
+ */
 function balanceTeams() {
 	if (!inChooseMode) {
 		if (players.length == 1 && teamR.length == 0) {
@@ -1480,13 +1601,16 @@ function balanceTeams() {
 	}
 }
 
-// function to choose players by ID, TOP, RANDOM, BOTTOM
+/**
+ * The function "choosePlayer" is used to select a player from a list based on their ID, top position,
+ * random selection, or bottom position.
+ */
 function choosePlayer() {
 	clearTimeout(timeOutCap);
 	if (teamR.length <= teamB.length && teamR.length != 0) {
 		room.sendAnnouncement(Bot +"[ATH] Para elegir un jugador, ingrese su número en la lista dada o use 'top', 'random' o 'bottom'.", teamR[0].id, 0x4ffaff, "bold", 2);
 		timeOutCap = setTimeout(function (player) { room.sendAnnouncement("[ATH] Date prisa @" + player.name + ", solo quedan " + Number.parseInt(chooseTime / 2) + " segundos para elegir !", player.id); timeOutCap = setTimeout(function (player) { room.kickPlayer(player.id, "¡No elegiste a tiempo!", false); }, chooseTime * 500, teamR[0]); }, chooseTime * 1000, teamR[0], "bold", 1
-		
+
 		);
 	}
 	else if (teamB.length < teamR.length && teamB.length != 0) {
@@ -1496,7 +1620,12 @@ function choosePlayer() {
 	if (teamR.length != 0 && teamB.length != 0) getSpecList(teamR.length <= teamB.length ? teamR[0] : teamB[0]);
 }
 
-// Active players ID for choosing
+
+/**
+ * The function "getSpecList" sends a list of players in a team to a specific player.
+ * @param player - The parameter "player" represents the player for whom the special list is being
+ * generated.
+ */
 function getSpecList(player) {
 	var cstm = "[ATH] Jugadores : ";
 	for (var i = 0 ; i < teamS.length ; i++) {
@@ -1513,6 +1642,9 @@ function getSpecList(player) {
 
 /* STATS FUNCTIONS */
 
+/**
+ * The function getLastTouchOfTheBall checks which player from which team touched the ball last.
+ */
 function getLastTouchOfTheBall() {
 	const ballPosition = room.getBallPosition();
 	updateTeams();
@@ -1531,7 +1663,11 @@ function getLastTouchOfTheBall() {
 	}
 }
 
-function getStats() { // gives possession, ball speed and GK of each team
+/**
+ * The function `getStats()` updates the possession, ball speed, and goalkeeper statistics for each
+ * team during an active play.
+ */
+function getStats() {
 	if (activePlay) {
 		updateTeams();
 		lastTeamTouched == Team.RED ? Rposs++ : Bposs++;
@@ -1561,6 +1697,10 @@ function getStats() { // gives possession, ball speed and GK of each team
 
 
 
+/**
+ * The function "updateStats" updates the statistics of players in a game, including games played,
+ * wins, losses, win rate, goals, assists, clean sheets, and Elo rating.
+ */
 function updateStats() {
 	// Checks when game is over
 	if (players.length >= 2 * maxTeamSize && (game.scores.time >= (5 / 6) * game.scores.timeLimit || game.scores.red == game.scores.scoreLimit || game.scores.blue == game.scores.scoreLimit) && allReds.length >= maxTeamSize && allBlues.length >= maxTeamSize) {
@@ -1568,7 +1708,8 @@ function updateStats() {
 		// for all RED players
 		for (var i = 0; i < allReds.length; i++) {
 			// Get all the items in the JSON file
-			localStorage.getItem(getAuth(allReds[i])) ? stats = JSON.parse(localStorage.getItem(getAuth(allReds[i]))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", allReds[i].name];
+			// stats: [0] Games played, [1] Wins, [2] Losses, [3] Draws, [4] Winrate, [5] Goals, [6] Assists, [7] Clean sheets, [8] Saves, [9] Save rate, [10] Elo rating, [11] Player type, [12] Player name
+			localStorage.getItem(getAuth(allReds[i])) ? stats = JSON.parse(localStorage.getItem(getAuth(allReds[i]))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", allReds[i].name, "", 0x000000, ""];
 			// +1 in Games played
 			stats[Ss.GA]++;
 			// Which team won?
@@ -1580,7 +1721,7 @@ function updateStats() {
 		}
 		// The same for Blue TEAM
 		for (var i = 0; i < allBlues.length; i++) {
-			localStorage.getItem(getAuth(allBlues[i])) ? stats = JSON.parse(localStorage.getItem(getAuth(allBlues[i]))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", allBlues[i].name];
+			localStorage.getItem(getAuth(allBlues[i])) ? stats = JSON.parse(localStorage.getItem(getAuth(allBlues[i]))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", allBlues[i].name, "", 0x000000, ""];
 			stats[Ss.GA]++;
 			lastWinner == Team.BLUE ? stats[Ss.WI]++ : lastWinner == Team.RED ? stats[Ss.LS]++ : stats[Ss.DR]++;
 			stats[Ss.WR] = (100 * stats[Ss.WI] / stats[Ss.GA]).toPrecision(3);
@@ -1621,19 +1762,19 @@ function updateStats() {
 		}
         // Elo recalculation for RED
         for (var i = 0; i < allReds.length; i++) {
-			localStorage.getItem(getAuth(allReds[i])) ? stats = JSON.parse(localStorage.getItem(getAuth(allReds[i]))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", allReds[i].name];
-            stats[Ss.ELO] = (1000 + (stats[Ss.WI]*5)+(stats[Ss.LS]*-15)+(stats[Ss.GL]*15)+(stats[Ss.AS]*15)+(stats[Ss.CS]*10));
+			localStorage.getItem(getAuth(allReds[i])) ? stats = JSON.parse(localStorage.getItem(getAuth(allReds[i]))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", allReds[i].name, "", 0x000000, ""];
+            stats[Ss.ELO] = (1000 + (stats[Ss.WI]*5)+(stats[Ss.LS]*-15)+(stats[Ss.GL]*15)+(stats[Ss.AS]*15)+(stats[Ss.CS]*20));
 			localStorage.setItem(getAuth(allReds[i]), JSON.stringify(stats));
 		}
 		// Elo recalculation for BLUE
 		for (var i = 0; i < allBlues.length; i++) {
-			localStorage.getItem(getAuth(allBlues[i])) ? stats = JSON.parse(localStorage.getItem(getAuth(allBlues[i]))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", allBlues[i].name];
-            stats[Ss.ELO] = (1000 + (stats[Ss.WI]*5)+(stats[Ss.LS]*-15)+(stats[Ss.GL]*15)+(stats[Ss.AS]*15)+(stats[Ss.CS]*10));
+			localStorage.getItem(getAuth(allBlues[i])) ? stats = JSON.parse(localStorage.getItem(getAuth(allBlues[i]))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", allBlues[i].name, "", 0x000000, ""];
+            stats[Ss.ELO] = (1000 + (stats[Ss.WI]*5)+(stats[Ss.LS]*-15)+(stats[Ss.GL]*15)+(stats[Ss.AS]*15)+(stats[Ss.CS]*20));
 			localStorage.setItem(getAuth(allBlues[i]), JSON.stringify(stats));
 		}
-
 	}
 }
+
 
 // Function to look for the GK :/
 function findGK() {
@@ -1654,6 +1795,7 @@ function findGK() {
 	}
 	GKList = [tab[0][1], tab[1][1]];
 }
+
 
 setInterval(() => {
 	var tableau = [];
@@ -1704,33 +1846,40 @@ setInterval(() => {
 
 /* PLAYER MOVEMENT */
 
-// Admin players AUTH (Examples in array)
-AdminNamesAuth = [["Spirex", "5j1g_6yUw8dF759z1yhjrBePDnXLFq2ecFfh-aMD77s"], ["Falaxsa", "5O1JEqAovTHJOjyZFZKeJeIR9pJMmYkhjRg_tt45R3Y"], ["Framcia", "1LKKefrQBBXyCkbBlPXCWPykqWCGPzQmAnkpk_Zwz8k"], ["Get", "g6u2XpPb0A-OTnGaq8-X4pN7JkdL04qAgcvjLY9uTek"]]
-
 // Function that is triggered when a player joins
 room.onPlayerJoin = function(player) {
+
 	console.log(player.name + " : " + player.auth);
 	extendedP.push([player.id, player.auth, player.conn, false, 0, 0, false]);
+
 	updateRoleOnPlayerIn();
 
 
-    if (player.auth == AdminNamesAuth[0][1]) {
-		room.sendAnnouncement("[ATHBOT] 🦝 Llegó el ingeniero electrónico de la UNI, respeten a dios.", null, 0x4ffaff, "bold", 2);
-		}
-	else if  (player.auth == AdminNamesAuth[1][1]) room.sendAnnouncement("[ATHBOT] 🐝 LA UTEC ES LA UTEC HA LLEGADO. ", null, 0x4ffaff, "bold", 2);
-	else if  (player.auth == AdminNamesAuth[3][1]) room.sendAnnouncement("[ATHBOT] 💩 Atentos que ya llegó la GET-nialidad ", null, 0x4ffaff, "bold", 2);
-	else if  (player.auth == AdminNamesAuth[2][1]) room.sendAnnouncement("[ATHBOT] Ya llegó Framcia", null, 0x4ffaff, "bold", 2);
-		
-	else {
-		room.sendAnnouncement("[ATHBOT] 👋 Bienvenido UTECsino a [LPF(F)] " + player.name + " ! Escriba '!help' para ver los comandos.", "bold", 1);
-        room.sendAnnouncement(Bot + "Pon !reglas x si hay alguna queja ", player.id, 0x6FE35D, "bold", 1);
-		}
-
-
 	if (localStorage.getItem(player.auth) != null) {
-		if (JSON.parse(localStorage.getItem(player.auth))[Ss.RL] != "player") {
+		if (JSON.parse(localStorage.getItem(player.auth))[Ss.RL] == "admin") {
 			room.setPlayerAdmin(player.id, true);
 		}
+	}
+
+	// Stats: "Auth" : '["0-Games", "1-Wins", "2-Draws", "3-Losses", "4-Winrate", "5-Goals", "6-Assists", "7-GK", "8-CS", "9-CS%", "10- ELO", "11-Role", "12-Nick", "13-Emoji", "14-Color", "15-MSG"]'
+	localStorage.getItem(getAuth(player)) ? stats = JSON.parse(localStorage.getItem(getAuth(player))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", player.name, "", "", ""];
+
+	if (stats[Ss.RL] === "admin")
+	{
+		// Default emoji and message when joining if Admin
+		if (stats[Ss.MSG] === "" && stats[Ss.EMOJI] === "")
+		{
+			stats[Ss.MSG] = "El administrador " + player.name + " ha llegado";
+			stats[Ss.EMOJI] = "👑";
+			localStorage.setItem(getAuth(player), JSON.stringify(stats));
+		}
+
+		room.sendAnnouncement(stats[Ss.EMOJI] + " " + stats[Ss.MSG], null, 0x4ffaff, "bold", 2);
+	}
+	else
+	{
+		room.sendAnnouncement("[ATHBOT] 👋 Bienvenido UTECsino a [LPF(F)] " + player.name + " ! Escriba '!help' para ver los comandos.", "bold", 1);
+		room.sendAnnouncement(Bot + "Pon !reglas x si hay alguna queja ", player.id, 0x6FE35D, "bold", 1);
 	}
 }
 
@@ -1814,9 +1963,8 @@ room.onPlayerChat = function (player, message) {
 
 	console.log("Nombre " + player.name + " : " + message);
 
-	if (message.startsWith("t ")) 
+	if (message.startsWith("t "))
 	{
-	
 	room.getPlayerList().filter(callback => callback.team == player.team).forEach(callback => {room.sendAnnouncement("[Chat de equipo] < " + player.name + ": " + message.substr(2)/*`[Chat de equipo] > [${player.id}] ${player.name}: ${message.substr(prefixTeamChatString.length)}`*/, callback.id, player.team == 1 ? 0xFF7438 : player.team == 0 ? 0xABFFB6 : 0x2C6AC7, "bold", 1)})
 
 	return false;
@@ -1829,38 +1977,44 @@ room.onPlayerChat = function (player, message) {
 	}
 	message = message.split(/ +/);
 	player.team != Team.SPECTATORS ? setActivity(player, 0) : null;
-	if (["!help"].includes(message[0].toLowerCase())) 
+	if (["!help"].includes(message[0].toLowerCase()))
 	{
 		room.sendAnnouncement("[ATH] Comandos : !mostrarstats, t [chat para team], !camisetahelp, !reglas", player.id, 0x4ffaff, "bold", 2);
-		player.admin ? room.sendAnnouncement(Bot + "[ATH] Admin : !mute <duration = 3> #<id>, !unmute all/#<id>, !clearbans <number = all>, !slow <duration>, !endslow", player.id, 0x4ffaff, "bold", 2) : null;
+		player.admin ? room.sendAnnouncement(Bot + " : [Admin] !mute <duration = 3> #<id>, !unmute all/#<id>, !clearbans <number = all>, !slow <duration>, !endslow", player.id, 0x4ffaff, "bold", 2) : null;
+				player.admin ? room.sendAnnouncement(Bot + " : [Admin] | !color <htmlcolor> | !message <message> | !emoji <emoji>", player.id, 0x4ffaff, "bold", 2) : null;
+
 	}
 
     else if (message == "!elo")
     {
         var stats;
-		localStorage.getItem(getAuth(player)) ? stats = JSON.parse(localStorage.getItem(getAuth(player))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0];
+		localStorage.getItem(getAuth(player)) ? stats = JSON.parse(localStorage.getItem(getAuth(player))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", player.name, "", "", ""]
 		room.sendAnnouncement("[" + player.name + "] ELO: " + stats[Ss.ELO], null, 0x4ffaff, "bold", 1);
-
 	}
 
-    else if (message == "!leaderboard")
-    {   
-        var top10 = {};
-        for (var i = 0; i < players.length; i++) {
+    else if (["!leaderboard", "tabla"].includes(message[0].toLowerCase()))
+    {
+        var top10Array = [];
+		let limit = 10;
+        for (let key in localStorage) {
 
-			localStorage.getItem(getAuth(players[i])) ? stats = JSON.parse(localStorage.getItem(getAuth(players[i]))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", players[i].name];
-            top10[players[i].name] = stats[Ss.ELO];
+			if (key.length > 15)
+			{
+			// Stats: "Auth" : '["0-Games", "1-Wins", "2-Draws", "3-Losses", "4-Winrate", "5-Goals", "6-Assists", "7-GK", "8-CS", "9-CS%", "10- ELO", "11-Role", "12-Nick", "13-Emoji", "14-Color", "15-MSG"]'
+			localStorage.getItem(key) ? stats = JSON.parse(localStorage.getItem(key)) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", player.name, "", "", ""]
+            top10Array.push({ name: stats[12], elo: stats[10] });
+			}
 		}
-
         // Create items array
-        var items = Object.keys(top10).map(function(key) {return [key, top10[key]];});
+  		top10Array.sort((a, b) => b.elo - a.elo);
 
-        items.sort(function(first, second) {return second[1] - first[1];});
-        items.slice(0, 10);
         room.sendAnnouncement("-------------LOS 10 MAS GRANDES DE HAXBALL-------------", player.id, 0xffcd48, "bold", 2);
-        for (var i = 0; i < items.length; i++)
+
+		if (message.length > 1) {limit = parseInt(message[1]);}
+
+        for (var i = 0; i < Math.min(top10Array.length, limit); i++)
         {
-            room.sendAnnouncement(i+1 + ". " + items[i][0] + " -> " + items[i][1] + " puntos", player.id, 0xffcd48, "bold", 2);
+            room.sendAnnouncement(i+1 + ". " + top10Array[i].name + " -> " + top10Array[i].elo + " puntos", player.id, 0xffcd48, "bold", 2);
         }
 	}
 
@@ -1916,17 +2070,59 @@ room.onPlayerChat = function (player, message) {
 		room.sendAnnouncement(Bot + cstm, player.id, 0x8AFFF7, "bold", 2);
 	}
 	else if (["!mostrarstats"].includes(message[0].toLowerCase())) {
-		
+
 		var stats;
-		localStorage.getItem(getAuth(player)) ? stats = JSON.parse(localStorage.getItem(getAuth(player))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0];
+		localStorage.getItem(getAuth(player)) ? stats = JSON.parse(localStorage.getItem(getAuth(player))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", player.name, "", "", ""];
 		room.sendAnnouncement("[" + player.name + "] PJ: " + stats[Ss.GA] + ", Victorias: " + stats[Ss.WI] + ", Derrotas: " + stats[Ss.LS] + ", WR: " + stats[Ss.WR] + "%, Goles: " + stats[Ss.GL] + ", Asistencias: " + stats[Ss.AS] + ", GK: " + stats[Ss.GK] + ", CS: " + stats[Ss.CS] + ", CS%: " + stats[Ss.CP] + "%", null, 0x30FF91, "bold", 1);
 
 	}
-	else if (["!partidas"].includes(message[0].toLowerCase())) 
+
+	// Entry admin message setting
+	else if ((["!message"].includes(message[0].toLowerCase())) && player.admin)  {
+
+		var stats;
+		localStorage.getItem(getAuth(player)) ? stats = JSON.parse(localStorage.getItem(getAuth(player))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", player.name, "", "", ""];
+
+		const remainingWords = message.slice(1).join(" ");
+
+		stats[Ss.MSG] = remainingWords;
+		localStorage.setItem(getAuth(player), JSON.stringify(stats));
+		room.sendAnnouncement(Bot + "Bienvenida de jugador cambiada exitosamente a [ " + remainingWords + " ]", player.id, 0x6FE35D, "bold", 1);
+
+	}
+
+	// Entry admin emoji setting
+	else if ((["!emoji"].includes(message[0].toLowerCase())) && player.admin)  {
+
+		if (message.length > 0)
+		{
+
+		var stats;
+		localStorage.getItem(getAuth(player)) ? stats = JSON.parse(localStorage.getItem(getAuth(player))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", player.name, "", "", ""];
+		stats[Ss.EMOJI] = message[1];
+		localStorage.setItem(getAuth(player), JSON.stringify(stats));
+		room.sendAnnouncement(Bot + "Emoji del jugador cambiado exitosamente a a [ " + message[1] + " ]", player.id, 0x6FE35D, "bold", 1);
+		}
+	}
+
+	else if ((["!color"].includes(message[0].toLowerCase())) && player.admin)  {
+
+		if (message.length > 0)
+		{
+		var stats;
+		localStorage.getItem(getAuth(player)) ? stats = JSON.parse(localStorage.getItem(getAuth(player))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", player.name, "", "", ""];
+		stats[Ss.COLOR] = message[1];
+		localStorage.setItem(getAuth(player), JSON.stringify(stats));
+		room.sendAnnouncement(Bot + "Emoji del jugador cambiado exitosamente a a [ " + message[1] + " ]", player.id, 0x6FE35D, "bold", 1);
+		}
+	}
+
+
+	else if (["!partidas"].includes(message[0].toLowerCase()))
 	{
 		var tableau = [];
 		Object.keys(localStorage).forEach(function (key) { if (!["player_name", "view_mode", "geo", "avatar", "player_auth_key"].includes(key)) { tableau.push([(JSON.parse(localStorage.getItem(key))[Ss.NK]), (JSON.parse(localStorage.getItem(key))[Ss.GA])]); } });
-		if (tableau.length < 5) 
+		if (tableau.length < 5)
 		{
 			room.sendAnnouncement(Bot +"[ATH] Aún no se han jugado partidos suficientes.", player.id, 0x8AFFF7, "bold",2);
 			return false;
@@ -1974,26 +2170,27 @@ room.onPlayerChat = function (player, message) {
 		tableau.sort(function (a, b) { return b[1] - a[1]; });
 		room.sendAnnouncement(Bot + "[ATH] Vallas Invictas> #1 " + tableau[0][0] + ": " + tableau[0][1] + " #2 " + tableau[1][0] + ": " + tableau[1][1] + " #3 " + tableau[2][0] + ": " + tableau[2][1] + " #4 " + tableau[3][0] + ": " + tableau[3][1] + " #5 " + tableau[4][0] + ": " + tableau[4][1], player.id, 0x8AFFF7, "bold", 2);
 	}
-    // Command for claiming admin, use the password above (in line 19 lol)
 	else if (["!claim"].includes(message[0].toLowerCase())) {
+
+		console.log("claimsito");
 		if (message[1] == adminPassword) {
 			room.setPlayerAdmin(player.id, true);
 			var stats;
-			localStorage.getItem(getAuth(player)) ? stats = JSON.parse(localStorage.getItem(getAuth(player))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", player.name];
-			if (stats[Ss.RL] != "DiosGOD") {
-				stats[Ss.RL] = "DiosGOD";
+			localStorage.getItem(getAuth(player)) ? stats = JSON.parse(localStorage.getItem(getAuth(player))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", player.name, "", "", ""];
+			if (stats[Ss.RL] != "admin") {
+				stats[Ss.RL] = "admin";
 				room.sendAnnouncement(Bot + player.name + " Ahora es alumno de la UTEC !", null, 0x8AFFF7, "bold", 2);
 				localStorage.setItem(getAuth(player), JSON.stringify(stats));
 			}
 		}
 	}
 	else if (["!setadmin", "!admin"].includes(message[0].toLowerCase())) {
-		if (localStorage.getItem(getAuth(player)) && JSON.parse(localStorage.getItem(getAuth(player)))[Ss.RL] == "DiosGOD") {
+		if (localStorage.getItem(getAuth(player)) && JSON.parse(localStorage.getItem(getAuth(player)))[Ss.RL] == "admin") {
 			if (message.length >= 2 && message[1][0] == "#") {
 				message[1] = message[1].substring(1, message[1].length);
 				if (!Number.isNaN(Number.parseInt(message[1])) && room.getPlayer(Number.parseInt(message[1])) != null) {
 					var stats;
-					localStorage.getItem(getAuth(room.getPlayer(Number.parseInt(message[1])))) ? stats = JSON.parse(localStorage.getItem(getAuth(room.getPlayer(Number.parseInt(message[1]))))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", room.getPlayer(Number.parseInt(message[1])).name];
+					localStorage.getItem(getAuth(room.getPlayer(Number.parseInt(message[1])))) ? stats = JSON.parse(localStorage.getItem(getAuth(room.getPlayer(Number.parseInt(message[1]))))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", room.getPlayer(Number.parseInt(message[1])).name, "", 0x000000, ""];
 					if (stats[Ss.RL] == "player") {
 						stats[Ss.RL] = "admin";
 						localStorage.setItem(getAuth(room.getPlayer(Number.parseInt(message[1]))), JSON.stringify(stats));
@@ -2005,12 +2202,12 @@ room.onPlayerChat = function (player, message) {
 		}
 	}
 	else if (["!setplayer", "!removeadmin"].includes(message[0].toLowerCase())) {
-		if (localStorage.getItem(getAuth(player)) && JSON.parse(localStorage.getItem(getAuth(player)))[Ss.RL] == "DiosGOD") {
+		if (localStorage.getItem(getAuth(player)) && JSON.parse(localStorage.getItem(getAuth(player)))[Ss.RL] == "admin") {
 			if (message.length >= 2 && message[1][0] == "#") {
 				message[1] = message[1].substring(1, message[1].length);
 				if (!Number.isNaN(Number.parseInt(message[1])) && room.getPlayer(Number.parseInt(message[1])) != null) {
 					var stats;
-					localStorage.getItem(getAuth(room.getPlayer(Number.parseInt(message[1])))) ? stats = JSON.parse(localStorage.getItem(getAuth(room.getPlayer(Number.parseInt(message[1]))))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", room.getPlayer(Number.parseInt(message[1])).name];
+					localStorage.getItem(getAuth(room.getPlayer(Number.parseInt(message[1])))) ? stats = JSON.parse(localStorage.getItem(getAuth(room.getPlayer(Number.parseInt(message[1]))))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", room.getPlayer(Number.parseInt(message[1])).name, "", 0x000000, ""];
 					if (stats[Ss.RL] == "admin") {
 						room.sendAnnouncement(Bot + room.getPlayer(Number.parseInt(message[1])).name + " Ya no es alumno de la UTEC !", null, 0x8AFFF7, "bold", 2);
 						stats[Ss.RL] = "player";
@@ -2162,10 +2359,12 @@ room.onPlayerChat = function (player, message) {
 			}
 		}
 	}
-	
+
 	else if (["!bb", "!bye", "!cya", "!gn"].includes(message[0].toLowerCase())) {
 		room.kickPlayer(player.id, "Nos vemos mrd !", false);
 	}
+
+
 
     // Example command for creating soccer jerseys of "teams"
     // Must use hexadecimal colors for it, [0x'HEXCOLOR']
@@ -2252,12 +2451,11 @@ room.onPlayerChat = function (player, message) {
 
 	}
 
-	else if (["!camisetahelp"].includes(message[0].toLowerCase())) 
+	else if (["!camisetahelp"].includes(message[0].toLowerCase()))
 	{
 		room.sendAnnouncement("[ATH] !camiseta [Nombre Del Equipo] : aguilas, abejitas, borrachos, mishari, expropiadores, liverpool, rechuchamboys, machos, psg, victoria, lorient, devils, callao, atheros [ In progress ]", player.id, 0x4ffaff, "bold", 2);
 	}
 
-	
 
 	if (teamR.length != 0 && teamB.length != 0 && inChooseMode) {
 		if (player.id == teamR[0].id || player.id == teamB[0].id) { // we care if it's one of the captains choosing
@@ -2330,9 +2528,9 @@ room.onPlayerChat = function (player, message) {
 					}
 				}
 			}
-			
+
 		}
-	
+
 	}
 	if (message[0][0] == "!") {
 		return false;
@@ -2355,52 +2553,18 @@ room.onPlayerChat = function (player, message) {
 	}
 
     // Special chat settings for Admin and specific players (Using nicks)
-	else if (true == true && player.admin && player.name != "InGETcil" ) {
-
-		if (player.name == "Get")
-		{
-		room.sendAnnouncement("[💩] " + player.name + ": " + message.join(" "), null, 0xEA8915 , "bold", 1);
+	else if (player.admin && player.name != botName) {
+		var stats;
+		localStorage.getItem(getAuth(player)) ? stats = JSON.parse(localStorage.getItem(getAuth(player))) : stats = [0, 0, 0, 0, "0.00", 0, 0, 0, 0, "0.00", 0, "player", player.name, "", "", ""];
+		room.sendAnnouncement("[" + stats[Ss.EMOJI] + "] " + player.name + ": " + message.join(" "), null, "0x" + stats[Ss.COLOR] , "bold", 1);
 		return false;
-
-		}
-		else if (player.name == "Falaxsa")
-		{
-		room.sendAnnouncement("[🐝] " + player.name + ": " + message.join(" "), null, 0xFFFF00, "bold", 1);
-		return false;
-		}
-		else if (player.name == "Spirex" || player.name == "Esperansa uwu")
-		{
-		room.sendAnnouncement("[🦝] " + player.name + ": " + message.join(" "), null, 0xFF0000, "bold", 1);
-		return false;
-		}
-
-		else
-		{
-
-		room.sendAnnouncement("[Adm] " + player.name + ": " + message.join(" "), null, 0x05c61c, "bold", 1);
-		return false;
-		}
 	}
-	
-	else if (true == true &&! player.admin) {
+
+	else if (!player.admin) {
 			/*room.sendAnnouncement(player.name + ": " + message.join(" ") , null , player.team == 1 ? 0xFF7438 : player.team == 0 ? 0xffffff : 0x2C6AC7, "normal", 1);*/
 			room.sendAnnouncement((player.team == 1 ? "🔴 " + player.name + ": " + message.join(" ") : player.team == 0 ? player.name + ": " + message.join(" ") : "🔵 " + player.name + ": " + message.join(" ")), null , player.team == 1 ? 0xFF0000 : player.team == 0 ? 0xffffff : 0x2C6AC7, "normal", 1);
 			return false;
-			/* 1 = red /*
-			/* 0 = espectador 🔴🔵/*
-			/* null = azul /*
 
-			return false;
-		}
-	/*else if (p.team in teamR)*/
-	/*{*/
-	/*	room.sendAnnouncement(player.name + ": " + message.join(" "), null, 0xe52441, "bold", 1);*/
-/**/
-	/*}*/
-	/*else if (p.team in teamB)*/
-	/*{*/
-	/*	room.sendAnnouncement(player.name + ": " + message.join(" "), null, 0x2424e5, "bold", 1);*/
-	/*}*/
 	}
 
 }
@@ -2581,4 +2745,3 @@ room.onGameTick = function() {
 	getStats();
 	handleInactivity();
 }
-
