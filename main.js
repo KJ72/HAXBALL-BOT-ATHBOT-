@@ -29,7 +29,7 @@ const timeLimitBig = 4;
 room.setTeamsLock(true);
 
 
-var player_size = 10;
+var player_size = 15;
 
 
 /* STADIUM */
@@ -2727,13 +2727,13 @@ room.onTeamGoal = function(team) {
 			room.sendAnnouncement("🔥 " + getTime(scores) + " Golazo de " + lastPlayersTouched[0].name + " ! Con paseson de " + lastPlayersTouched[1].name + ". Velocidad de tiro : " + ballSpeed.toPrecision(4).toString() + "km/h " + (team == Team.RED ? "🔴" : "🔵"), null, 0x4ffaff, "bold", 1);
 			game.goals.push(new Goal(scores.time, team, lastPlayersTouched[0], lastPlayersTouched[1]));
 
-			change_size(20, team);
+			change_size(25, team);
 		}
 		else {
 			room.sendAnnouncement("🔥 " + getTime(scores) + " Golazo de " + lastPlayersTouched[0].name + " ! Velocidad de tiro : " + ballSpeed.toPrecision(4).toString() + "km/h " + (team == Team.RED ? "🔴" : "🔵"), null, 0x4ffaff, "bold", 1);
 			game.goals.push(new Goal(scores.time, team, lastPlayersTouched[0], null));
 			
-			change_size(20, team);
+			change_size(25, team);
 		}
 	}
 	else {
