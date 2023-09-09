@@ -2611,6 +2611,7 @@ room.onGameStart = function(byPlayer) {
 	}
 	deactivateChooseMode();
 	reset_size(player_size);
+	change_player_speed(15, 0);
 }
 
 room.onGameStop = function(byPlayer) {
@@ -2705,6 +2706,10 @@ function reset_size(player_size) {
 
 }
 
+function change_player_speed(player_speed, id) {
+	room.setPlayerDiscProperties(id, {xspeed: player_speed, yspeed: player_speed});
+}
+
 
 
 room.onGamePause = function(byPlayer) {
@@ -2727,14 +2732,16 @@ room.onTeamGoal = function(team) {
 			room.sendAnnouncement("🔥 " + getTime(scores) + " Golazo de " + lastPlayersTouched[0].name + " ! Con paseson de " + lastPlayersTouched[1].name + ". Velocidad de tiro : " + ballSpeed.toPrecision(4).toString() + "km/h " + (team == Team.RED ? "🔴" : "🔵"), null, 0x4ffaff, "bold", 1);
 			game.goals.push(new Goal(scores.time, team, lastPlayersTouched[0], lastPlayersTouched[1]));
 
-			change_size(25, team);
 		}
 		else {
 			room.sendAnnouncement("🔥 " + getTime(scores) + " Golazo de " + lastPlayersTouched[0].name + " ! Velocidad de tiro : " + ballSpeed.toPrecision(4).toString() + "km/h " + (team == Team.RED ? "🔴" : "🔵"), null, 0x4ffaff, "bold", 1);
 			game.goals.push(new Goal(scores.time, team, lastPlayersTouched[0], null));
 			
-			change_size(25, team);
 		}
+
+		change_size(25, team);
+		change_player_speed(25, lastPlayersTouched[0].id);
+
 	}
 	else {
 		room.sendAnnouncement("🤣 " + getTime(scores) + " " + lastPlayersTouched[0].name + " BEBÉ" + " ¿QUE FUÉ? 🙃 "+ " ! Velocidad de tiro : " + ballSpeed.toPrecision(4).toString() + "km/h " + (team == Team.RED ? "🔴" : "🔵"), null, 0x4ffaff, "bold", 1);
@@ -2751,6 +2758,7 @@ room.onPositionsReset = function() {
 	countAFK = true;
 	lastPlayersTouched = [null, null];
 	reset_size(player_size);
+	change_player_speed(15, 0);
 }
 
 /* MISCELLANEOUS */
