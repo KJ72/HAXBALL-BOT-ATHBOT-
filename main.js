@@ -1882,6 +1882,19 @@ room.onPlayerJoin = function(player) {
 	{
 		room.sendAnnouncement("[ATHBOT] 👋 Bienvenido UTECsino a [LPF(F)] " + player.name + " ! Escriba '!help' para ver los comandos.", "bold", 1);
 		room.sendAnnouncement(Bot + "Pon !reglas x si hay alguna queja ", player.id, 0x6FE35D, "bold", 1);
+		room.sendAnnouncement(Bot + "---------------------------------", player.id, 0x6FE35D, "bold", 1);
+		room.sendAnnouncement(Bot + "👑👑👑 NUEVO HAXPASS 👑👑👑", player.id, 0x6FE35D, "bold", 1);
+		room.sendAnnouncement(Bot + "Disfruta de ventajas unicas en Atheros Bot", player.id, 0x6FE35D, "bold", 1);
+		room.sendAnnouncement(Bot + "1. Mensaje de entrada personalizado ", player.id, 0x6FE35D, "bold", 1);
+		room.sendAnnouncement(Bot + "2. Emoji personalizado como los admins ", player.id, 0x6FE35D, "bold", 1);
+		room.sendAnnouncement(Bot + "3. Color en chat personalizado ", player.id, 0x6FE35D, "bold", 1);
+		room.sendAnnouncement(Bot + "4. Skipeo de posicion de cola ", player.id, 0x6FE35D, "bold", 1);
+		room.sendAnnouncement(Bot + "5. Añadir tu camiseta a la base de datos del servidor ", player.id, 0x6FE35D, "bold", 1);
+		room.sendAnnouncement(Bot + "7. Cambio de camiseta del equipo a tu eleccion ", player.id, 0x6FE35D, "bold", 1);
+		room.sendAnnouncement(Bot + "TAN SOLO A 3 NUEVOS SOLES, Yape: +51 997960459 ", player.id, 0x6FE35D, "bold", 1);
+		room.sendAnnouncement(Bot + "Mas informacion en discord user: falaxsa", player.id, 0x6FE35D, "bold", 1);
+
+
 	}
 }
 
@@ -2611,7 +2624,7 @@ room.onGameStart = function(byPlayer) {
 	}
 	deactivateChooseMode();
 	reset_size(player_size);
-	change_player_speed(15, 0);
+
 }
 
 room.onGameStop = function(byPlayer) {
@@ -2689,7 +2702,6 @@ function change_size(player_size, team) {
 
 	var players = room.getPlayerList();
 	var team_players = players.filter((p) => p.team == team);
-	
 	for (var i = 0; i < team_players.length; i++) {
 		room.setPlayerDiscProperties(team_players[i].id, {radius: player_size});
 	}
@@ -2699,17 +2711,10 @@ function change_size(player_size, team) {
 function reset_size(player_size) {
 
 	var players = room.getPlayerList();
-	
 	for (var i = 0; i < players.length; i++) {
 		room.setPlayerDiscProperties(players[i].id, {radius: player_size});
 	}
-
 }
-
-function change_player_speed(player_speed, id) {
-	room.setPlayerDiscProperties(id, {xspeed: player_speed, yspeed: player_speed});
-}
-
 
 
 room.onGamePause = function(byPlayer) {
@@ -2739,8 +2744,7 @@ room.onTeamGoal = function(team) {
 			
 		}
 
-		change_size(25, team);
-		change_player_speed(25, lastPlayersTouched[0].id);
+		change_size(40, team);
 
 	}
 	else {
@@ -2758,7 +2762,6 @@ room.onPositionsReset = function() {
 	countAFK = true;
 	lastPlayersTouched = [null, null];
 	reset_size(player_size);
-	change_player_speed(15, 0);
 }
 
 /* MISCELLANEOUS */
