@@ -29,6 +29,8 @@ const timeLimitBig = 4;
 room.setTeamsLock(true);
 
 
+var player_size = 10;
+
 
 /* STADIUM */
 
@@ -1976,13 +1978,14 @@ room.onPlayerChat = function (player, message) {
 		return false;
 	}
 	message = message.split(/ +/);
+
 	player.team != Team.SPECTATORS ? setActivity(player, 0) : null;
+
 	if (["!help"].includes(message[0].toLowerCase()))
 	{
 		room.sendAnnouncement("[ATH] Comandos : !mostrarstats, t [chat para team], !camisetahelp, !reglas", player.id, 0x4ffaff, "bold", 2);
 		player.admin ? room.sendAnnouncement(Bot + " : [Admin] !mute <duration = 3> #<id>, !unmute all/#<id>, !clearbans <number = all>, !slow <duration>, !endslow", player.id, 0x4ffaff, "bold", 2) : null;
 				player.admin ? room.sendAnnouncement(Bot + " : [Admin] | !color <htmlcolor> | !message <message> | !emoji <emoji>", player.id, 0x4ffaff, "bold", 2) : null;
-
 	}
 
     else if (message == "!elo")
@@ -2116,7 +2119,6 @@ room.onPlayerChat = function (player, message) {
 		room.sendAnnouncement(Bot + "Emoji del jugador cambiado exitosamente a a [ " + message[1] + " ]", player.id, 0x6FE35D, "bold", 1);
 		}
 	}
-
 
 	else if (["!partidas"].includes(message[0].toLowerCase()))
 	{
@@ -2608,6 +2610,7 @@ room.onGameStart = function(byPlayer) {
 		room.getPlayer(extendedP[i][eP.ID]) == null ? extendedP.splice(i, 1) : null;
 	}
 	deactivateChooseMode();
+	reset_size(player_size);
 }
 
 room.onGameStop = function(byPlayer) {
@@ -2680,6 +2683,30 @@ room.onGameStop = function(byPlayer) {
 	}
 }
 
+
+function change_size(player_size, team) {
+
+	var players = room.getPlayerList();
+	var team_players = players.filter((p) => p.team == team);
+	
+	for (var i = 0; i < team_players.length; i++) {
+		room.setPlayerDiscProperties(team_players[i].id, {radius: player_size});
+	}
+
+}
+
+function reset_size(player_size) {
+
+	var players = room.getPlayerList();
+	
+	for (var i = 0; i < players.length; i++) {
+		room.setPlayerDiscProperties(players[i].id, {radius: player_size});
+	}
+
+}
+
+
+
 room.onGamePause = function(byPlayer) {
 }
 
@@ -2695,13 +2722,18 @@ room.onTeamGoal = function(team) {
 	const scores = room.getScores();
 	game.scores = scores;
 	if (lastPlayersTouched[0] != null && lastPlayersTouched[0].team == team) {
+		
 		if (lastPlayersTouched[1] != null && lastPlayersTouched[1].team == team) {
 			room.sendAnnouncement("🔥 " + getTime(scores) + " Golazo de " + lastPlayersTouched[0].name + " ! Con paseson de " + lastPlayersTouched[1].name + ". Velocidad de tiro : " + ballSpeed.toPrecision(4).toString() + "km/h " + (team == Team.RED ? "🔴" : "🔵"), null, 0x4ffaff, "bold", 1);
 			game.goals.push(new Goal(scores.time, team, lastPlayersTouched[0], lastPlayersTouched[1]));
+
+			change_size(20, team);
 		}
 		else {
 			room.sendAnnouncement("🔥 " + getTime(scores) + " Golazo de " + lastPlayersTouched[0].name + " ! Velocidad de tiro : " + ballSpeed.toPrecision(4).toString() + "km/h " + (team == Team.RED ? "🔴" : "🔵"), null, 0x4ffaff, "bold", 1);
 			game.goals.push(new Goal(scores.time, team, lastPlayersTouched[0], null));
+			
+			change_size(20, team);
 		}
 	}
 	else {
@@ -2718,6 +2750,7 @@ room.onTeamGoal = function(team) {
 room.onPositionsReset = function() {
 	countAFK = true;
 	lastPlayersTouched = [null, null];
+	reset_size(player_size);
 }
 
 /* MISCELLANEOUS */
