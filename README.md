@@ -17,7 +17,7 @@ ATHEROS HAXBALL BOT
 
 4. ELO system: Initial ELO = [1000 + (Wins*5) + (Losses*-15) + (Goals*15) + (Assists*15) + (CS*10)]
 5. Multiple choosable soccer jerseys from LPF Haxball teams with !camisetahelp.
-6. TOP 10 in-room players by ELO !leaderboard
+6. Flexible leaderboard menu for ELO level
 7. HaxPass - Skip Lines, Chat color, personalized emoji, entrance message
 8. And many more commands....
 
